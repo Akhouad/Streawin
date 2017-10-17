@@ -1,0 +1,243 @@
+$bg : #eaece6;
+$bg_2 : #f0f2eb;
+.cover{
+	width : 100%;
+	padding : 30px 20px;
+	background-color: $bg;
+	float: left;
+	position: relative;
+
+	.cover_bg{
+		position: absolute;
+		z-index: 0;
+		top:0;
+		right: 0;
+		width: 75%;
+		height: 100%;
+		overflow: hidden;
+		img{
+			width : 100%;
+			min-height: 100%;
+			opacity: .15;
+		}
+		&:after{
+			content: "";
+			position: absolute;
+			top:0;
+			left: 0;
+			width: 33%;
+			height: 100%;
+			@include background(linear-gradient(left, $bg, transparent));
+		}
+	}
+	.series_image{
+		position: relative;
+		z-index: 2;
+		width: 160px;
+		float: left;
+		@include border-radius(4px);
+		overflow: hidden;
+		img{
+			width : 100%;
+			float: left;
+		}
+	}
+	.series_info{
+		position: relative;
+		z-index: 2;
+		padding-left:20px;
+		float: left;
+		.date{font-size : 12px;}
+		.title{
+			font : $montserrat;
+			color:$dark;
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+		.rate{
+			height: 24px;
+			background-color: $gray;
+			line-height: 24px;
+			vertical-align: middle;
+			display: inline-block;
+			@include border-radius(4px);
+			color:$lighter;
+			margin-bottom: 10px;
+			img{
+				float: left;
+				margin-right: 10px;
+			}
+		}
+		.genres{
+			.single_genre{
+				font-size: 12px;
+				font-weight: 400;
+				float: left;
+				padding: 0 5px;
+				background-color: $main_2;
+				color:$lighter;
+				margin-right:5px;
+				@include border-radius(4px);
+				&:last-child{margin-right : 0;}
+			}
+		}
+	}
+}
+.left_side{
+	float: left;
+	width : 50%;
+	padding : 30px 20px;
+	position: relative;
+	ul.seasons{
+		padding : 0;
+		float: left;
+		width: 100%;
+		margin-bottom: 10px;
+		li{
+			list-style: none;
+			float: left;
+			padding : 0;
+			margin-right: 5px;
+			margin-bottom: 5px;
+			a{
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				text-align: center;
+				font : $montserrat;
+				line-height: 40px;
+				background-color: $bg;
+				color : $gray;
+				@include border-radius(4px);
+				@include transition(all 200ms);
+				&.active{
+					background-color: $main_2;
+					color:$lighter;
+				}
+			}
+		}
+	}
+	ul.episodes{
+		padding : 0;
+		float: left;
+		width: 100%;
+		position: relative;
+		li{
+			list-style: none;
+			margin-right: 5px;
+			margin-bottom: 5px;
+			float: left;
+			width: 160px;
+			max-height: 89px;
+			overflow: hidden;
+			@include border-radius(4px);
+			overflow: hidden;
+			position: relative;
+			background-color: $dark;
+			@include transition(all 200ms);
+			a{
+				float: left;
+				img{
+					width:100%;
+					float: left;
+				}
+				.episode_number{
+					position: absolute;
+					top:50%;
+					left: 50%;
+					@include transform(translate(-50%, -50%));
+					// background-color: $lighter;
+					// color:$gray;
+					background-color: transparent;
+					color:$lighter;
+					width: 30px;
+					height: 30px;
+					font:$montserrat;
+					line-height: 30px;
+					text-align: center;
+					@include border-radius(50%);
+					border:solid 1px $lighter;
+					z-index: 2;
+					@include transition(all 200ms);
+				}
+				.episode_title{
+					position: absolute;
+					bottom:0;
+					left: 0;
+					width: 100%;
+					text-align: center;
+					line-height: 13px;
+					color:$lighter;
+					padding : 5px;
+					z-index: 2;
+					@include transform(translateY(100%));
+					@include transition(all 200ms);
+				}
+				&:hover{
+					img{opacity : .1;}
+					.episode_number{@include transform(translate(-50%, -100%));}
+					.episode_title{@include transform(translateY(0));}
+				}
+			}
+			&.mask{
+				background-color: $light;
+				position: absolute;
+				top:0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 99;
+			}
+		}
+
+	}
+}
+.right_side{
+	width : 50%;
+	float: right;
+	background-color: $bg_2;
+	padding : 30px 20px;
+	.series_synopsis{
+		position: relative;
+		z-index: 2;
+		color : $dark;
+		float: left;
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	ul.cast{
+		li{
+			margin-right: 15px;
+			margin-bottom: 15px;
+			list-style: none;
+			float: left;
+			width: 100px;
+			position: relative;
+			z-index: 2;
+			@include transition(all 200ms);
+
+			img{
+				width: 100%;
+				float: left;
+			}
+			.name{
+				position: absolute;
+				left: 0;
+				bottom:0;
+				width: 100%;
+				padding: 5px;
+				background-color: $light;
+				z-index: 99;
+				line-height: 14px;
+				font-size: 13px;
+				opacity: 0;
+				@include transition(all 200ms);
+			}
+			&:hover{
+				@include transform(scale(1.1));
+				box-shadow : 0 0 30px rgba(0,0,0,.25);
+				.name{opacity: 1;}
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+.row{
+	width:100%;
+	float: left;
+	position: relative;
+}
+.half{
+	float: left;
+	position: relative;
+	width : 50%;
+	&:first-child{padding-right:15px;}
+	&:last-child{padding-left:15px;}
+}

@@ -1,0 +1,153 @@
+$bg : #252525;
+.servers{
+	width:100%;
+	float: left;
+	padding:0;
+	background-color: $bg;
+	max-height:400px;
+	overflow:hidden;
+	position: relative;
+	img{
+		width: 100%;
+		opacity: .25;
+	}
+	.frame{
+		ul{
+			text-align: center;
+			padding: 7px 0;
+			li{
+				display: inline-block;
+				padding : 0 10px;
+				a{
+					color:$gray;
+					font:$montserrat;
+					text-transform: uppercase;
+					&.active{color:$lighter}
+				}
+			}
+		}
+		text-align: center;
+		display: none;
+	}
+	.play_title{
+		position: absolute;
+		top:50%;
+		left: 50%;
+		cursor: pointer;
+		color:$lighter;
+		text-align: center;
+		@include transform(translate(-50%, -50%));
+		i.icon{
+			display: inline-block;
+			height: 72px;
+			width: 72px;
+			line-height: 72px;
+			font-size: 36px;
+			text-align: center;
+			border-radius:50%;
+			background-color: transparent;
+			border:solid 2px $lighter;
+			margin-bottom: 15px;
+		}
+		.title{
+			font:$montserrat;
+			text-transform: uppercase;
+		}
+	}
+} 
+.prev_next{
+	width:100%;
+	float: left;
+	background-color: #323232;
+	& > a{
+		display: inline-block;
+		color:$light;
+		width: 50%;
+		padding:20px;
+		float: left;
+		padding : 20px 50px;
+		position: relative;
+		@include transition(all 200ms);
+
+		&:hover{
+			background-color: #262626;
+		}
+		i{
+			font-size: 36px;
+			position: absolute;
+			top:50%;
+			left: 20px;
+			@include transform(translateY(-50%));
+		}
+		&:first-child{
+			&:after{
+				content: "";
+				position: absolute;
+				top:20px;
+				bottom: 20px;
+				right: 0;
+				width: 1px;
+				background-color: #000;
+			}
+		}
+		&.next{
+			i{
+				left: auto;
+				right: 20px;
+			}
+			.t{
+				&:after{
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+		.t{
+			font:$montserrat;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+			display: block;
+			position: relative;
+			&:after{
+				content: "";
+				position: absolute;
+				bottom:-11px;
+				left: 0;
+				width: 20px;
+				height: 2px;
+				background-color: $main_1;
+			}
+		}
+		.num_episode{
+			display: inline-block;
+			margin-right: 40px;
+			position: relative;
+			&:after{
+				content: "";
+				position: absolute;
+				top:0;
+				right:-20px;
+				height: 100%;
+				width: 2px;
+				background-color: $main_1;
+				@include transform(rotate(45deg));
+			}
+		}
+		&.next{
+			text-align: right;
+		}
+	}
+}
+.site_map{
+	background-color: #323232;
+	padding : 0 20px;
+	height:50px;
+	line-height:50px;
+	width:100%;
+	float: left;
+	color:$lighter;
+	a:not(.btn){
+		color:$main_1;
+		&:hover{text-decoration:underline}
+	}
+}

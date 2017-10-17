@@ -1,0 +1,6 @@
+robots.txt
+index.html
+.htaccess
+node_modules
+.sass-cache
+.bashrc

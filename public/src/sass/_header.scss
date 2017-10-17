@@ -1,0 +1,44 @@
+header.main_header{
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 99;
+	
+	$height : 60px;
+	height:$height;
+	width : 100%;
+	@include background(linear-gradient(to left, $main_2, $main_1));
+
+	.left{
+		background-color: rgba(86,98,112,.1);
+		text-align: center;
+		line-height: $height;
+		height: $height;
+	}
+
+	.right{
+		nav.main_nav{
+			ul{
+				padding: 0;
+				float: left;
+				li{
+					list-style: none;
+					float: left;
+					padding: 0;
+					margin-left: 20px;
+					height: $height;
+					line-height: $height;
+					a{
+						font:$montserrat;
+						font-weight: 700;
+						color:$lighter;
+						text-transform: uppercase;
+						&:hover{
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

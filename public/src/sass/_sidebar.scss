@@ -1,0 +1,43 @@
+.main_sidebar{
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:calc(100% - 60px);
+	background-color: $light;
+	margin-top:60px;
+	padding: 20px 20px;
+	overflow-y : auto;
+
+	.input_1{
+		margin-bottom: 30px;
+	}
+
+	.title_1{
+		&:after{
+			background-color: $gray;
+		}
+	}
+
+
+	.categories_menu{
+		display: none;
+		background-color: $lighter;
+		@include border-radius(0 4px 4px 4px);
+		float: left;
+		padding:20px 20px 0;
+		overflow-y : auto;
+		ul{
+			li{
+				list-style: none;
+				a{
+					font:$montserrat;
+					font-size: 12px;
+					line-height: 24px;
+					text-transform: uppercase;
+					color:$gray;
+				}
+			}
+		}
+	}
+}
